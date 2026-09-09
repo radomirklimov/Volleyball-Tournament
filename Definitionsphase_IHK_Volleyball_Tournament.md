@@ -71,18 +71,12 @@ Die Anwendung soll folgende Kernfunktionen bereitstellen:
 
 # 4. Messbare Projektziele
 
-Für eine IHK-Dokumentation sollten die Ziele möglichst überprüfbar formuliert werden.
-
 | Ziel | Messkriterium |
 |---|---|
 | Anzeige aktueller Turnierdaten | Die Anwendung stellt die vorhandenen Turnierdaten aus der bestehenden Datenbank dar. |
 | Automatische Aktualisierung | Änderungen an relevanten Turnierdaten werden ohne manuelles Neuladen der Webseite übertragen. |
-| Antwortzeit | Die definierte Antwortzeit beträgt maximal **3 Sekunden**. |
 | Erreichbarkeit | Die Anwendung ist innerhalb des vorgesehenen **ATIW-WLANs** erreichbar. |
 | Benutzerfreundlichkeit | Die definierten Kernbereiche sind über eine klare Navigation erreichbar. |
-| Datenbankkompatibilität | Die Anwendung kann die vorhandenen Daten der bestehenden Datenbank verwenden. |
-
-**Hinweis:** Für eine Note-1-Dokumentation sollten insbesondere die Kriterien für „Echtzeit“, „Benutzerfreundlichkeit“ und „Stabilität“ noch konkreter messbar gemacht werden.
 
 → **[INFORMATION FEHLT: Konkrete maximale Verzögerung der Live-Aktualisierung]**
 
