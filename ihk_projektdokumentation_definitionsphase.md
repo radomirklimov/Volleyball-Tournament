@@ -67,65 +67,26 @@ Die bestehende Webseite weist insbesondere folgende Einschränkungen auf:
 - Die bestehende Datenbank soll weiterverwendet werden.
 - Die Datenpflege erfolgt weiterhin über den bestehenden Prozess.
 
-**[INFORMATION FEHLT: Genaues Verfahren der Datenpflege und verwendetes System durch die Lehrkraft]**
-
 # SOLLKONZEPT
 
 ## UMFELD
-
-Die neue Anwendung dient als zentrale Informationsoberfläche für die Teilnehmer eines Volleyballturniers.
-
-Der Benutzer soll ohne besondere technische Kenntnisse auf die relevanten Turnierinformationen zugreifen können.
-
+Die neue Anwendung dient als zentrale Informationsoberfläche für die Teilnehmer eines Volleyballturniers. Der Benutzer soll ohne besondere technische Kenntnisse auf die relevanten Turnierinformationen zugreifen können. 
 Der geplante Informationsfluss lautet:
-
 **Lehrkraft → Datenbank → Backend/API → Webanwendung → Benutzer**
-
-Die bestehende Datenbank bleibt dabei die Grundlage für die Turnierdaten.
-
-Die neue Anwendung übernimmt insbesondere die Aufbereitung und Darstellung dieser Daten.
+Die bestehende Datenbank bleibt dabei die Grundlage für die Turnierdaten. Die neue Anwendung übernimmt insbesondere die Aufbereitung und Darstellung dieser Daten.
 
 # USECASE
-
 ## Benutzer
-
-Als Benutzer wird ein normaler Teilnehmer beziehungsweise Besucher der Anwendung betrachtet.
-
-Eine Anmeldung ist nach aktuellem Stand nicht vorgesehen.
-
-**[INFORMATION FEHLT: Ob tatsächlich keine Benutzerverwaltung vorgesehen ist]**
-
+Die Hauptnutzer der Anwendung sind Schülerinnen und Schüler beziehungsweise Teilnehmer des Volleyballturniers. Für die Nutzung der Anwendung ist nach aktuellem Stand keine Anmeldung erforderlich.
 ## Haupt-Use-Cases
-
 ### UC-01: Turnierübersicht anzeigen
-
-Der Benutzer öffnet die Anwendung und erhält einen Überblick über den aktuellen Stand des Turniers.
-
-Dabei sollen relevante Informationen zu Gruppen, Mannschaften und Spielen übersichtlich dargestellt werden.
-
+Der Benutzer öffnet die Anwendung und erhält einen Überblick über den aktuellen Stand des Turniers. Dabei sollen relevante Informationen zu Gruppen, Mannschaften und Spielen übersichtlich dargestellt werden.
 ### UC-02: Gruppe anzeigen
-
 Der Benutzer wählt eine Gruppe aus und erhält die zugehörigen Informationen.
-
-### UC-03: Mannschaft suchen
-
-Der Benutzer sucht nach einer bestimmten Mannschaft und erhält deren relevante Informationen.
-
-### UC-04: Mannschaftsinformationen anzeigen
-
+### UC-03: Mannschaftsinformationen anzeigen
 Der Benutzer öffnet das Profil einer Mannschaft und kann deren relevante Turnierinformationen und Ergebnisse einsehen.
-
-### UC-05: Spiele anzeigen
-
-Der Benutzer kann kommende und bereits abgeschlossene Spiele einsehen.
-
-Bei abgeschlossenen Spielen werden die vorhandenen Ergebnisse angezeigt.
-
-### UC-06: Turnierdaten automatisch aktualisieren
-
-Während des laufenden Turniers werden Änderungen an den relevanten Daten automatisch an die Benutzeroberfläche übertragen.
-
-Ein manuelles Neuladen der Webseite soll hierfür nicht erforderlich sein.
+### UC-04: Spiele anzeigen
+Der Benutzer kann kommende und bereits abgeschlossene Spiele einsehen. Bei abgeschlossenen Spielen werden die vorhandenen Ergebnisse angezeigt.
 
 # FUNCTIONALITAET
 
