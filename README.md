@@ -187,10 +187,13 @@
 - Stabilität unter Last  
 
 ### Technologien
-- Websocket  
-- REST API  
-- Datenbank (bestehend)  
-- Frontend-Framework (optional)
+- Websocket 
+- REST API
+- Kotlin
+- Spring boot
+- React
+- JavaScript, HTML, CSS
+- Datenbank MariaDB (bestehend) 
 
 ### Usability & Softwareergonomie
 - Klare Navigation  
