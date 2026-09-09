@@ -88,12 +88,8 @@ Der Benutzer öffnet das Profil einer Mannschaft und kann deren relevante Turnie
 ### UC-04: Spiele anzeigen
 Der Benutzer kann kommende und bereits abgeschlossene Spiele einsehen. Bei abgeschlossenen Spielen werden die vorhandenen Ergebnisse angezeigt.
 
-# FUNCTIONALITAET
-
-## MUSS
-
-Folgende Funktionen sind für die Anwendung zwingend erforderlich:
-
+## Funktionalität
+### MUSS
 1. Grafische Hauptseite mit aktuellem Turnierstand
 2. automatische Aktualisierung der Turnierdaten
 3. Darstellung der Gruppen
@@ -101,111 +97,45 @@ Folgende Funktionen sind für die Anwendung zwingend erforderlich:
 5. Teamübersicht
 6. Mannschaftssuche
 7. Übersicht über Spiele
-8. Darstellung kommender Spiele
-9. Darstellung abgeschlossener Spiele
-10. Anzeige der Spielergebnisse
-
-## SOLL
-
-Folgende Funktionen sollen umgesetzt werden:
-
+8. Darstellung abgeschlossener Spiele
+9. Anzeige der Spielergebnisse
+### SOLL
 - Kompatibilität mit unterschiedlichen Endgeräten
 - Leaderboard
 - komfortable Filterung
 - komfortable Sortierung
 - klare Seitenstruktur
 - Navigation zwischen den einzelnen Bereichen
-
-## KANN
-
-Folgende Funktionen stellen optionale Erweiterungen dar:
-
+### KANN
 - Speicherung von Einstellungen über Cookies
 - Anpinnen einer Lieblingsmannschaft
 - Anzeige eines Schiedsrichters
-- Anzeige des Spielfelds einer Mannschaft
+  
+## ERM
 
-Die Kann-Anforderungen besitzen eine geringere Priorität und werden nur umgesetzt, wenn dies innerhalb des verfügbaren Zeitbudgets möglich ist.
-
-# ERM
-
-Die Anwendung greift auf eine bereits vorhandene Datenstruktur zurück.
-
-Das bestehende Entity-Relationship-Modell enthält unter anderem folgende Entitäten:
-
-- **Runde**
-- **Gruppe**
-- **Team**
-- **Feld**
-- **Spiel**
-
-### Runde
-
-Eine Runde wird über eine eindeutige ID und eine Nummer identifiziert.
-
-### Gruppe
-
-Eine Gruppe wird über eine Gruppen-ID und eine Bezeichnung beschrieben.
-
-### Team
-
-Ein Team besitzt unter anderem eine ID, eine Klasse und einen Namen.
-
-Teams werden Gruppen zugeordnet.
-
-### Feld
-
-Ein Feld besitzt eine eindeutige ID und eine Bezeichnung beziehungsweise einen Namen.
-
-### Spiel
-
-Ein Spiel enthält die Informationen über die beteiligten Mannschaften und das Ergebnis. Im vorhandenen Modell werden unter anderem die Punkte der beiden beteiligten Mannschaften gespeichert.
-
-Die Beziehungen zwischen den Entitäten bilden beispielsweise ab:
-
-- Eine Runde enthält mehrere Felder beziehungsweise Spiele.
-- Eine Gruppe enthält mehrere Teams.
-- Ein Spiel wird zwischen Teams ausgetragen.
-- Ein Spiel findet auf einem Feld statt.
-
-**Hinweis:** Die genaue Kardinalität der einzelnen Beziehungen sollte entsprechend des tatsächlich verwendeten Datenbankschemas dokumentiert werden.
-
-# SCHNITTSCHTELLEN
-
+## SCHNITTSCHTELLEN
 Für die Kommunikation zwischen Frontend und Backend ist eine REST-Schnittstelle vorgesehen.
-
-Geplante Endpunkte:
-
 ```text
-GET /api/dashboard
 GET /api/groups
+Liefert eine Übersicht aller vorhandenen Gruppen. 
 GET /api/groups/{id}
+Liefert die Details einer bestimmten Gruppe anhand ihrer ID.
 GET /api/matches
+Liefert eine Übersicht der vorhandenen Spiele.  
 GET /api/matches/{id}
+Liefert die Details eines bestimmten Spiels anhand seiner ID.
 GET /api/matches/filter/{filter}
+Liefert Spiele entsprechend einem angegebenen Filter, beispielsweise alle Spiele alle Spiele einer bestimmten Runde.
 GET /api/teams
+Liefert eine Übersicht aller teilnehmenden Mannschaften. 
 GET /api/teams/{id}
+Liefert die Details einer bestimmten Mannschaft anhand ihrer ID.
 ```
-
 Für die automatische Übertragung von Änderungen ist zusätzlich eine WebSocket-Schnittstelle vorgesehen:
-
 ```text
 WS /ws/live
+Stellt eine dauerhafte Verbindung zwischen Frontend und Backend her und ermöglicht die Übertragung von Aktualisierungen an die Benutzeroberfläche, ohne dass die Webseite manuell neu geladen werden muss.  
 ```
-
-## Zweck der REST-Schnittstelle
-
-Die REST-Schnittstelle stellt die benötigten Turnierdaten für das Frontend bereit.
-
-Beispielsweise können darüber Gruppen, Mannschaften oder Spiele abgerufen werden.
-
-## Zweck der WebSocket-Schnittstelle
-
-Die WebSocket-Verbindung soll für die automatische Aktualisierung der Benutzeroberfläche verwendet werden.
-
-Dadurch soll vermieden werden, dass der Benutzer die Webseite manuell aktualisieren muss.
-
-**[INFORMATION FEHLT: Welche konkreten Daten beziehungsweise Events werden über den WebSocket übertragen?]**
 
 # ENTWURF VON PROCESSEN
 
