@@ -30,74 +30,37 @@ Für die Projektkalkulation wird ein Stundensatz von **15 EUR** angesetzt. Bei e
 
 # UMGEBUNG
 Das Projekt wird innerhalb der vorhandenen IT-Infrastruktur der ATIW umgesetzt.
-
-Zu den relevanten Rahmenbedingungen gehören:
-
+Zu den möglichen Risiken gehören:
 - bestehende MariaDB-Datenbank
-- vorhandene Turnierdaten
-- bestehende einfache PHP-Webseite
-- ATIW-WLAN
 - ATIW-Firewall
 - für das Deployment benötigte Hardware
-
-Die Anwendung ist primär für Schülerinnen und Schüler vorgesehen, die während eines Volleyballturniers Informationen über dessen aktuellen Verlauf abrufen möchten.
-
-Die Turnierdaten werden weiterhin durch die zuständige Lehrkraft gepflegt.
+Die Anwendung ist primär für Schülerinnen und Schüler vorgesehen, die während eines Volleyballturniers Informationen über dessen aktuellen Verlauf abrufen möchten. Die Turnierdaten werden weiterhin durch die zuständige Lehrkraft gepflegt.
 
 # ANFORDERUNGSANALYSE
-
-Aus der bestehenden Situation ergeben sich funktionale und qualitative Anforderungen an die neue Anwendung.
-
-Die vorhandene Lösung stellt zwar die Daten grundsätzlich bereit, ermöglicht jedoch keine komfortable und übersichtliche Darstellung des laufenden Turniers.
-
-Aus Sicht der Benutzer besteht insbesondere der Bedarf, den aktuellen Stand des Turniers schnell erfassen zu können. Dafür müssen relevante Informationen wie Gruppen, Mannschaften und Spiele strukturiert dargestellt werden.
-
-Die Anforderungen werden in drei Prioritätsstufen eingeteilt:
-
-- **Muss:** zwingend erforderliche Funktionen
-- **Soll:** wichtige Funktionen, die nach Möglichkeit umgesetzt werden
-- **Kann:** optionale Erweiterungen
-
-Die Priorisierung ermöglicht es, den Projektumfang bei begrenztem Zeitbudget von 80 Stunden kontrolliert zu steuern.
+Die vorhandene Lösung stellt die Daten grundsätzlich bereit, ermöglicht jedoch keine komfortable und übersichtliche Darstellung des laufenden Turniers. Aus Sicht der Benutzer besteht insbesondere der Bedarf, den aktuellen Stand des Turniers schnell erfassen zu können. Dafür müssen relevante Informationen wie Gruppen, Mannschaften und Spiele strukturiert dargestellt werden. Die Anforderungen werden in drei Prioritätsstufen eingeteilt. Die Priorisierung ermöglicht es, den Projektumfang bei begrenztem Zeitbudget von 80 Stunden kontrolliert zu steuern.
 
 # ISTANALYSE
-
 ## Bestehender Prozess
-
-Die Turnierdaten werden während des Turniers durch die zuständige Lehrkraft manuell in der bestehenden Datenbank aktualisiert.
-
-Die vorhandene Webseite ruft die Daten anschließend aus der Datenbank ab und stellt diese überwiegend tabellarisch dar.
-
+Die Turnierdaten werden während des Turniers durch die zuständige Lehrkraft manuell in der bestehenden Datenbank aktualisiert. Die vorhandene Webseite ruft die Daten anschließend aus der Datenbank ab und stellt diese überwiegend tabellarisch dar.
 Der derzeitige Ablauf lässt sich vereinfacht wie folgt darstellen:
-
 **Lehrkraft → manuelle Datenaktualisierung → Datenbank → PHP-Webseite → Benutzer**
-
 ## Vorhandene Daten
-
 In der bestehenden Datenbasis befinden sich unter anderem Informationen zu:
-
 - Runden
 - Gruppen
 - Mannschaften
 - Spielen
 - Spielfeldern
 - Ergebnissen
-
-Das vorhandene ER-Modell bildet die Beziehungen zwischen diesen Daten ab.
-
+- Teilnahme der Mannschaft
 ## Probleme der bestehenden Lösung
-
 Die bestehende Webseite weist insbesondere folgende Einschränkungen auf:
-
 - überwiegend tabellarische Darstellung
 - keine moderne grafische Benutzeroberfläche
 - eingeschränkte Übersichtlichkeit
 - keine automatische Echtzeit-Aktualisierung
 - keine komfortable Mannschaftssuche
-- eingeschränkte Filter- und Sortiermöglichkeiten
-
-Dadurch müssen sich Teilnehmer die für sie relevanten Informationen teilweise aus einer wenig strukturierten Darstellung heraussuchen.
-
+- keine Filter- und Sortiermöglichkeiten
 ## Einschränkungen
 
 Die Anwendung darf nach den aktuellen Rahmenbedingungen ausschließlich innerhalb des **ATIW-Netzwerks** veröffentlicht werden.
