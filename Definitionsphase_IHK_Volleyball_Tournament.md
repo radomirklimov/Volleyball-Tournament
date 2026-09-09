@@ -20,10 +20,6 @@ Während eines laufenden Turniers ändern sich die gespeicherten Daten regelmä�
 
 Darüber hinaus fehlen Funktionen, mit denen sich die vorhandenen Daten gezielt durchsuchen, filtern und nach unterschiedlichen Kriterien sortieren lassen.
 
-Das zentrale Problem lässt sich daher wie folgt zusammenfassen:
-
-> **Die vorhandenen Turnierdaten stehen grundsätzlich zur Verfügung, werden den Teilnehmern jedoch nicht in einer übersichtlichen, benutzerfreundlichen und automatisch aktualisierten Oberfläche bereitgestellt.**
-
 ---
 
 # 2. Projektauftrag
@@ -48,37 +44,28 @@ Die Anwendung soll insbesondere Informationen über Gruppen, Mannschaften und Sp
 
 # 3. Projektziele
 
-Die Projektziele werden in funktionale, qualitative und organisatorische Ziele unterteilt.
-
-## 3.1 Funktionale Ziele
-
 Die Anwendung soll folgende Kernfunktionen bereitstellen:
 
+### MUSS-Ziele
 - Darstellung des aktuellen Turnierstands auf einer grafischen Übersichtsseite
 - automatische Aktualisierung der angezeigten Turnierdaten
 - Darstellung der vorhandenen Gruppen und Spielfelder
 - Übersicht über teilnehmende Mannschaften
-- Suche nach Mannschaften
 - Darstellung von Spielen
 - Darstellung bereits abgeschlossener Spiele einschließlich ihrer Ergebnisse
-- Darstellung kommender Spiele
 
-Weitere gewünschte Funktionen sind:
-
+### SOLL-Ziele
 - Filterung der dargestellten Daten
 - Sortierung von Daten
 - übersichtliche Navigation zwischen den einzelnen Bereichen
 - Darstellung eines Mannschaftsprofils
 - Leaderboard
+- Anzeige eines Schiedsrichters
 
-### Optionale Funktionen
-
-Die folgenden Funktionen werden als optionale Erweiterungen betrachtet und sind nicht Bestandteil des zwingend erforderlichen Funktionsumfangs:
-
+### KANN-Ziele
 - Speicherung von Benutzereinstellungen über Cookies
 - Markieren beziehungsweise Anpinnen einer Lieblingsmannschaft
-- Anzeige eines Schiedsrichters
-- Anzeige des Spielfelds einer Mannschaft
+- Suche nach Mannschaften
 
 ---
 
