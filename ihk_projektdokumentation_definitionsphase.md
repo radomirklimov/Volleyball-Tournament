@@ -1,71 +1,34 @@
-# AUSGANGSSITUATION
+# Dokumentation
 
-## AUFTRAG
+# Ausgangssituation
 
-Der Auftraggeber des Projekts ist **Frau Geck-Mügge**. Auftragnehmer sind **Radomyr Klymov und Mykyta Riabchenko**.
+## Auftrag
+Der Auftraggeber des Projekts ist **Frau Geck-Mügge**. Auftragnehmer sind **Radomyr Klymov und Mykyta Riabchenko**. Aufgabe des Projekts ist die Entwicklung einer Webanwendung zur übersichtlichen Darstellung von Volleyballturnieren. Die Anwendung soll den Teilnehmern ermöglichen, sich während eines laufenden Turniers schnell über den aktuellen Turnierstand, Gruppen, Mannschaften und Spiele zu informieren. Als Grundlage wird eine bereits vorhandene Datenbank mit den benötigten Turnierdaten verwendet. Zusätzlich existiert eine einfache PHP-Webseite, über die die Daten derzeit tabellarisch dargestellt werden. Die bestehende Lösung soll durch eine strukturierte und benutzerfreundliche Webanwendung ersetzt. Ein besonderer Schwerpunkt liegt auf der automatischen Aktualisierung der angezeigten Daten während des laufenden Turniers.
 
-Aufgabe des Projekts ist die Entwicklung einer Webanwendung zur übersichtlichen Darstellung von Volleyballturnieren. Die Anwendung soll den Teilnehmern ermöglichen, sich während eines laufenden Turniers schnell über den aktuellen Turnierstand, Gruppen, Mannschaften und Spiele zu informieren.
-
-Als Grundlage wird eine bereits vorhandene Datenbank mit den benötigten Turnierdaten verwendet. Zusätzlich existiert eine einfache PHP-Webseite, über die die Daten derzeit tabellarisch dargestellt werden.
-
-Die bestehende Lösung soll durch eine strukturierte und benutzerfreundliche Webanwendung ersetzt beziehungsweise erweitert werden. Ein besonderer Schwerpunkt liegt auf der automatischen Aktualisierung der angezeigten Daten während des laufenden Turniers.
-
-# PROJEKTZIELE
-
-## TERMINIERUNG
-
-Für die Durchführung des Projekts steht ein Gesamtzeitbudget von **80 Stunden** zur Verfügung.
-
-Die konkrete Verteilung der Arbeitszeit auf die einzelnen Projektphasen wird in der Planungsphase festgelegt.
-
-**[INFORMATION FEHLT: Konkrete Projektlaufzeit beziehungsweise Projektzeitraum]**
-
-## KOSTEN
-
-Für die Projektkalkulation wird ein Stundensatz von **15 EUR** angesetzt.
-
-Bei einem Gesamtaufwand von 80 Stunden ergibt sich ein kalkulatorischer Projektaufwand von:
-
-**80 Stunden × 15 EUR/Stunde = 1.200 EUR**
-
-Die vorhandene Datenbank wird weiterverwendet.
-
-**[INFORMATION FEHLT: Weitere tatsächlich anfallende Kosten, beispielsweise für Hardware, Hosting oder zusätzliche Software]**
-
-## FUNKTIONALITAET
-
-Die Anwendung soll folgende funktionale Ziele erfüllen:
-
+# Projektziele
+## Terminierung
+Für die Durchführung des Projekts steht ein Gesamtzeitbudget von **80 Stunden** zur Verfügung. Die konkrete Verteilung der Arbeitszeit auf die einzelnen Projektphasen wird in der Planungsphase festgelegt.
+## Kosten
+Für die Projektkalkulation wird ein Stundensatz von **15 EUR** angesetzt. Bei einem Gesamtaufwand von 80 Stunden ergibt sich ein kalkulatorischer Projektaufwand von **1.200 EUR**
+## Funktionalität
 - grafische Darstellung des aktuellen Turnierstands
 - automatische Aktualisierung der Turnierdaten
+- Darstellung der Spiele
 - Darstellung der vorhandenen Gruppen
 - Darstellung der Spielfelder
 - Übersicht über die teilnehmenden Mannschaften
 - Suche nach Mannschaften
-- Darstellung kommender Spiele
-- Darstellung abgeschlossener Spiele
 - Anzeige der Ergebnisse abgeschlossener Spiele
 - Filterung und Sortierung von Daten
 - übersichtliche Navigation zwischen den verschiedenen Bereichen
 - Darstellung eines Mannschaftsprofils
-
-Die Anwendung soll innerhalb des **ATIW-WLANs** erreichbar sein.
-
-## QUALITAET
-
-Neben der funktionalen Umsetzung werden folgende Qualitätsziele verfolgt:
-
-- **Geschwindigkeit:** Die Antwortzeit der Anwendung soll maximal **3 Sekunden** betragen.
+- Die Anwendung soll innerhalb des **ATIW-WLANs** erreichbar sein.
+## Qualität
 - **Wartbarkeit:** Die Anwendung soll strukturiert aufgebaut sein, damit spätere Änderungen und Erweiterungen möglich sind.
 - **Usability:** Informationen sollen übersichtlich dargestellt und mit möglichst wenigen Interaktionen erreichbar sein.
 - **Kompatibilität:** Die Anwendung muss mit der bestehenden Datenbank zusammenarbeiten.
-- **Stabilität:** Die Anwendung soll während des Turnierbetriebs zuverlässig funktionieren.
-- **Sicherheit:** Der Zugriff soll entsprechend der vorgesehenen Netzwerkumgebung erfolgen.
-
-**[INFORMATION FEHLT: Konkrete messbare Zielwerte für Stabilität, Verfügbarkeit und Sicherheit]**
 
 # UMGEBUNG
-
 Das Projekt wird innerhalb der vorhandenen IT-Infrastruktur der ATIW umgesetzt.
 
 Zu den relevanten Rahmenbedingungen gehören:
