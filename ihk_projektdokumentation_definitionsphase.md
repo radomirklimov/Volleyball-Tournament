@@ -28,7 +28,7 @@ Für die Projektkalkulation wird ein Stundensatz von **15 EUR** angesetzt. Bei e
 - **Usability:** Informationen sollen übersichtlich dargestellt und mit möglichst wenigen Interaktionen erreichbar sein.
 - **Kompatibilität:** Die Anwendung muss mit der bestehenden Datenbank zusammenarbeiten.
 
-# UMGEBUNG
+# Umgebung
 Das Projekt wird innerhalb der vorhandenen IT-Infrastruktur der ATIW umgesetzt.
 Zu den möglichen Risiken gehören:
 - bestehende MariaDB-Datenbank
@@ -36,10 +36,10 @@ Zu den möglichen Risiken gehören:
 - für das Deployment benötigte Hardware
 Die Anwendung ist primär für Schülerinnen und Schüler vorgesehen, die während eines Volleyballturniers Informationen über dessen aktuellen Verlauf abrufen möchten. Die Turnierdaten werden weiterhin durch die zuständige Lehrkraft gepflegt.
 
-# ANFORDERUNGSANALYSE
+# Anforderungsanalyse
 Die vorhandene Lösung stellt die Daten grundsätzlich bereit, ermöglicht jedoch keine komfortable und übersichtliche Darstellung des laufenden Turniers. Aus Sicht der Benutzer besteht insbesondere der Bedarf, den aktuellen Stand des Turniers schnell erfassen zu können. Dafür müssen relevante Informationen wie Gruppen, Mannschaften und Spiele strukturiert dargestellt werden. Die Anforderungen werden in drei Prioritätsstufen eingeteilt. Die Priorisierung ermöglicht es, den Projektumfang bei begrenztem Zeitbudget von 80 Stunden kontrolliert zu steuern.
 
-# ISTANALYSE
+# IST-Analyse 
 ## Bestehender Prozess
 Die Turnierdaten werden während des Turniers durch die zuständige Lehrkraft manuell in der bestehenden Datenbank aktualisiert. Die vorhandene Webseite ruft die Daten anschließend aus der Datenbank ab und stellt diese überwiegend tabellarisch dar.
 Der derzeitige Ablauf lässt sich vereinfacht wie folgt darstellen:
@@ -67,15 +67,15 @@ Die bestehende Webseite weist insbesondere folgende Einschränkungen auf:
 - Die bestehende Datenbank soll weiterverwendet werden.
 - Die Datenpflege erfolgt weiterhin über den bestehenden Prozess.
 
-# SOLLKONZEPT
+# Sollkonzept
 
-## UMFELD
+## Umfeld
 Die neue Anwendung dient als zentrale Informationsoberfläche für die Teilnehmer eines Volleyballturniers. Der Benutzer soll ohne besondere technische Kenntnisse auf die relevanten Turnierinformationen zugreifen können. 
 Der geplante Informationsfluss lautet:
 **Lehrkraft → Datenbank → Backend/API → Webanwendung → Benutzer**
 Die bestehende Datenbank bleibt dabei die Grundlage für die Turnierdaten. Die neue Anwendung übernimmt insbesondere die Aufbereitung und Darstellung dieser Daten.
 
-# USECASE
+# Use Case
 ## Benutzer
 Die Hauptnutzer der Anwendung sind Schülerinnen und Schüler beziehungsweise Teilnehmer des Volleyballturniers. Für die Nutzung der Anwendung ist nach aktuellem Stand keine Anmeldung erforderlich.
 ## Haupt-Use-Cases
@@ -113,7 +113,7 @@ Der Benutzer kann kommende und bereits abgeschlossene Spiele einsehen. Bei abges
   
 ## ERM
 
-## SCHNITTSCHTELLEN
+## Schnittstellen
 Für die Kommunikation zwischen Frontend und Backend ist eine REST-Schnittstelle vorgesehen.
 ```text
 GET /api/groups
@@ -137,99 +137,38 @@ WS /ws/live
 Stellt eine dauerhafte Verbindung zwischen Frontend und Backend her und ermöglicht die Übertragung von Aktualisierungen an die Benutzeroberfläche, ohne dass die Webseite manuell neu geladen werden muss.  
 ```
 
-# ENTWURF VON PROCESSEN
-
-## Abruf der Turnierübersicht
-
+## Entwurf von Prozesse 
+### Abruf der Turnierübersicht
 Der Benutzer öffnet die Webanwendung.
-
 1. Das Frontend stellt eine Anfrage an das Backend.
 2. Das Backend verarbeitet die Anfrage.
 3. Das Backend greift auf die bestehende Datenbank zu.
 4. Die benötigten Turnierdaten werden ermittelt.
 5. Die Daten werden über die API an das Frontend übertragen.
 6. Das Frontend stellt die Daten grafisch dar.
-
-Vereinfacht:
-
 **Benutzer → React → REST API → Backend → MariaDB**
-
 Anschließend:
-
 **MariaDB → Backend → REST API → React → Benutzer**
-
-## Automatische Aktualisierung
-
+### Automatische Aktualisierung
 Während des Turniers werden Daten durch die Lehrkraft aktualisiert.
-
 Nach einer Änderung sollen die betroffenen Informationen automatisch an die verbundenen Benutzer übertragen werden.
-
 Der geplante Ablauf ist:
-
 **Datenänderung → Backend erkennt/erhält Änderung → WebSocket → Frontend → aktualisierte Darstellung**
+### Mannschaftssuche
+Der Benutzer gibt einen Suchbegriff für eine Mannschaft ein. Das Frontend übermittelt die Suchanfrage an das Backend beziehungsweise verwendet die dafür bereitgestellten Daten. Das Backend ermittelt die passenden Mannschaften aus den vorhandenen Daten. Anschließend werden die Suchergebnisse im Frontend dargestellt.
 
-Der Benutzer muss die Webseite dabei nicht manuell neu laden.
-
-**[INFORMATION FEHLT: Wie wird die Änderung im Backend erkannt?]**
-
-## Mannschaftssuche
-
-Der Benutzer gibt einen Suchbegriff für eine Mannschaft ein.
-
-Das Frontend übermittelt die Suchanfrage an das Backend beziehungsweise verwendet die dafür bereitgestellten Daten.
-
-Das Backend ermittelt die passenden Mannschaften aus den vorhandenen Daten.
-
-Anschließend werden die Suchergebnisse im Frontend dargestellt.
-
-## Anzeige eines Spiels
-
-Der Benutzer öffnet die Spieleübersicht.
-
-Die Anwendung ruft die vorhandenen Spiele ab und unterscheidet zwischen kommenden und abgeschlossenen Spielen.
-
-Bei abgeschlossenen Spielen werden die gespeicherten Ergebnisse angezeigt.
-
-# QUALITAETZIELE
-
-## Geschwindigkeit
-
-Die Antwortzeit der Anwendung soll maximal **3 Sekunden** betragen.
-
-Dieses Ziel soll durch Messungen während der Testphase überprüft werden.
-
-## Stabilität
-
-Die Anwendung soll während des Turnierbetriebs zuverlässig funktionieren.
-
-**[INFORMATION FEHLT: Konkretes messbares Stabilitätsziel, beispielsweise maximale Fehlerquote oder Mindestverfügbarkeit]**
-
-## Sicherheit
-
-Die Anwendung soll entsprechend der vorgesehenen Netzwerkumgebung betrieben werden.
-
-Der Zugriff ist auf das **ATIW-WLAN** beschränkt.
-
-**[INFORMATION FEHLT: Konkrete Anforderungen an Authentifizierung, Autorisierung und weitere Sicherheitsmaßnahmen]**
-
-## Usability
-
+## Qualitätsziele
+### Usability
 Die Benutzeroberfläche soll:
-
 - übersichtlich strukturiert sein
 - eine klare Navigation besitzen
 - relevante Informationen schnell zugänglich machen
 - auf unterschiedlichen Endgeräten nutzbar sein
 - eine verständliche Darstellung der Turnierinformationen ermöglichen
-
 ## Wartbarkeit
-
 Die Software soll strukturiert und modular aufgebaut werden. Dadurch sollen zukünftige Änderungen und Erweiterungen erleichtert werden.
 
-# EINGESETZTE TECHNOLOGIEN
-
-Für die Umsetzung sind folgende Technologien vorgesehen:
-
+## Eingesetzte Technologien
 | Technologie | Einsatzbereich |
 |---|---|
 | **Kotlin** | Backend-Entwicklung |
@@ -241,58 +180,3 @@ Für die Umsetzung sind folgende Technologien vorgesehen:
 | **REST API** | Kommunikation zwischen Frontend und Backend |
 | **WebSocket** | automatische Übertragung von Aktualisierungen |
 | **MariaDB** | bestehende Datenhaltung |
-
-Die bestehende **MariaDB-Datenbank** wird weiterverwendet.
-
-Die Kombination aus REST API und WebSocket ist vorgesehen, um zwischen dem initialen Abruf von Daten und der laufenden Aktualisierung zu unterscheiden. Die REST-Schnittstelle dient dabei der Bereitstellung von Daten, während WebSocket für die Übertragung von Änderungen während des laufenden Betriebs vorgesehen ist.
-
-**[INFORMATION FEHLT: Konkrete Begründung, warum Kotlin/Spring Boot, React und WebSocket gegenüber möglichen Alternativen ausgewählt wurden.]**
-
----
-
-# IHK-PRÜFERCHECK
-
-Aus Prüfersicht bildet die Dokumentation einen nachvollziehbaren roten Faden:
-
-**Ausgangssituation → Problem → Ziele → Ist-Analyse → Soll-Konzept → Anforderungen → Prozesse → Technologien**
-
-Für eine sehr gute IHK-Dokumentation sollten insbesondere folgende Punkte noch ergänzt werden:
-
-1. **Ist-Zustand quantifizieren**
-   - Anzahl der Teams
-   - Anzahl der Spiele
-   - erwartete Benutzerzahl
-   - Häufigkeit der Datenaktualisierung
-   - aktueller Zeitaufwand für die Informationsbeschaffung
-
-2. **Echtzeit konkret definieren**
-
-   Es sollte festgelegt werden, innerhalb welcher maximalen Zeit eine Änderung nach ihrer Erfassung in der Benutzeroberfläche sichtbar sein muss.
-
-3. **Projektabgrenzung schärfen**
-
-   Es sollte eindeutig festgehalten werden, welche Aufgaben nicht Bestandteil des Projekts sind, insbesondere ob die Datenbank und die Datenpflege vollständig außerhalb des Projektumfangs liegen.
-
-4. **Stakeholder detaillierter betrachten**
-
-   Für eine professionelle Darstellung können Interesse, Einfluss und Anforderungen der einzelnen Stakeholder gegenübergestellt werden.
-
-5. **Risiken bewerten**
-
-   Die Risiken sollten später um Eintrittswahrscheinlichkeit, Auswirkung, Priorität und konkrete Gegenmaßnahmen ergänzt werden.
-
-6. **Ressourcen dokumentieren**
-
-   Benötigte Hardware, Entwicklungsumgebung, Server und Testgeräte sollten aufgeführt werden.
-
-7. **Anforderungen nummerieren**
-
-   Es empfiehlt sich, Anforderungen mit IDs wie `F-01`, `F-02` usw. zu versehen und diese IDs später in Entwurf, Implementierung und Test wiederzuverwenden.
-
-8. **Technologieentscheidungen begründen**
-
-   Die Auswahl von React, Kotlin/Spring Boot und WebSocket sollte anhand der tatsächlichen Projektanforderungen begründet werden.
-
-9. **ERM mit der tatsächlichen Datenbank abgleichen**
-
-   Die dargestellten Entitäten und Kardinalitäten müssen exakt der vorhandenen Datenbank entsprechen.
