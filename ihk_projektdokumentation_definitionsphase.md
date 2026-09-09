@@ -62,13 +62,8 @@ Die bestehende Webseite weist insbesondere folgende Einschränkungen auf:
 - keine komfortable Mannschaftssuche
 - keine Filter- und Sortiermöglichkeiten
 ## Einschränkungen
-
-Die Anwendung darf nach den aktuellen Rahmenbedingungen ausschließlich innerhalb des **ATIW-Netzwerks** veröffentlicht werden.
-
-Für den späteren Betrieb wird entsprechende Hardware benötigt.
-
-Weitere Einschränkungen:
-
+- Die Anwendung darf ausschließlich innerhalb des **ATIW-Netzwerks** veröffentlicht werden. 
+- Für den späteren Betrieb wird entsprechende Hardware benötigt.
 - Die bestehende Datenbank soll weiterverwendet werden.
 - Die Datenpflege erfolgt weiterhin über den bestehenden Prozess.
 
