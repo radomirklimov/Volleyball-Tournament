@@ -120,6 +120,7 @@ Der Benutzer kann kommende und bereits abgeschlossene Spiele einsehen. Bei abges
 - Anzeige eines Schiedsrichters
   
 ## ERM
+![Entity Relationship Model](erm.png)
 
 ## Schnittstellen
 Für die Kommunikation zwischen Frontend und Backend ist eine REST-Schnittstelle vorgesehen.
