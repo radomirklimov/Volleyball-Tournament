@@ -3,18 +3,25 @@
 # Ausgangssituation
 
 ## Auftrag
-Der Auftraggeber des Projekts ist **Frau Geck-Mügge**. Auftragnehmer sind **Radomyr Klymov und Mykyta Riabchenko**. Aufgabe des Projekts ist die Entwicklung einer Webanwendung zur übersichtlichen Darstellung von Volleyballturnieren. Die Anwendung soll den Teilnehmern ermöglichen, sich während eines laufenden Turniers schnell über den aktuellen Turnierstand, Gruppen, Mannschaften und Spiele zu informieren. Als Grundlage wird eine bereits vorhandene Datenbank mit den benötigten Turnierdaten verwendet. Zusätzlich existiert eine einfache PHP-Webseite, über die die Daten derzeit tabellarisch dargestellt werden. Die bestehende Lösung soll durch eine strukturierte und benutzerfreundliche Webanwendung ersetzt. Ein besonderer Schwerpunkt liegt auf der automatischen Aktualisierung der angezeigten Daten während des laufenden Turniers.
+Klar, kürzer und direkter:
+
+## Auftrag
+Der Auftraggeber des Projekts ist **Frau Geck-Mügge**. Auftragnehmer sind **Radomyr Klymov und Mykyta Riabchenko**. Das Projekt wird im Rahmen eines Schulprojekts am **ATIW Berufskolleg** im Ausbildungsgang **Fachinformatiker für Anwendungsentwicklung** durchgeführt.
+Aktuell wird das Volleyballturnier über eine **lokal auf einem Rechner ausgeführte Turnierverwaltung** organisiert. Die dabei erfassten Daten werden in einer bestehenden Datenbank gespeichert und über eine einfache PHP-Webseite tabellarisch angezeigt.
+Die lokale Ausführung und die fehlende übersichtliche Weboberfläche erschweren den Teilnehmern den direkten Zugriff auf aktuelle Turnierinformationen. Zudem werden Änderungen nicht automatisch in der Webseite angezeigt.
+Ziel des Projekts ist daher die Entwicklung einer **zentral zugänglichen und benutzerfreundlichen Webanwendung**, die den aktuellen Turnierstand, Gruppen, Mannschaften und Spiele übersichtlich darstellt und automatisch aktualisiert.
+Die Anwendung soll innerhalb des **ATIW-WLANs** betrieben werden. Die bestehende Datenbank und die vorhandenen Turnierdaten werden weiterverwendet.
 
 # Projektziele
 ## Terminierung
 Für die Durchführung des Projekts steht ein Gesamtzeitbudget von **80 Stunden** zur Verfügung. Die konkrete Verteilung der Arbeitszeit auf die einzelnen Projektphasen wird in der Planungsphase festgelegt.
 ## Kosten
-Für die Projektkalkulation wird ein Stundensatz von **15 EUR** angesetzt. Bei einem Gesamtaufwand von 80 Stunden ergibt sich ein kalkulatorischer Projektaufwand von **1.200 EUR**
+Für die Umsetzung des Projekts wird ein **Kostenrahmen von 3.000 EUR** veranschlagt.
 ## Funktionalität
 - grafische Darstellung des aktuellen Turnierstands
 - automatische Aktualisierung der Turnierdaten
 - Darstellung der Spiele
-- Darstellung der vorhandenen Gruppen
+- Darstellung der Gruppen
 - Darstellung der Spielfelder
 - Übersicht über die teilnehmenden Mannschaften
 - Suche nach Mannschaften
@@ -23,6 +30,7 @@ Für die Projektkalkulation wird ein Stundensatz von **15 EUR** angesetzt. Bei e
 - übersichtliche Navigation zwischen den verschiedenen Bereichen
 - Darstellung eines Mannschaftsprofils
 - Die Anwendung soll innerhalb des **ATIW-WLANs** erreichbar sein.
+- für mobile Geräte geeignet 
 ## Qualität
 - **Wartbarkeit:** Die Anwendung soll strukturiert aufgebaut sein, damit spätere Änderungen und Erweiterungen möglich sind.
 - **Usability:** Informationen sollen übersichtlich dargestellt und mit möglichst wenigen Interaktionen erreichbar sein.
@@ -37,7 +45,7 @@ Zu den möglichen Risiken gehören:
 Die Anwendung ist primär für Schülerinnen und Schüler vorgesehen, die während eines Volleyballturniers Informationen über dessen aktuellen Verlauf abrufen möchten. Die Turnierdaten werden weiterhin durch die zuständige Lehrkraft gepflegt.
 
 # Anforderungsanalyse
-Die vorhandene Lösung stellt die Daten grundsätzlich bereit, ermöglicht jedoch keine komfortable und übersichtliche Darstellung des laufenden Turniers. Aus Sicht der Benutzer besteht insbesondere der Bedarf, den aktuellen Stand des Turniers schnell erfassen zu können. Dafür müssen relevante Informationen wie Gruppen, Mannschaften und Spiele strukturiert dargestellt werden. Die Anforderungen werden in drei Prioritätsstufen eingeteilt. Die Priorisierung ermöglicht es, den Projektumfang bei begrenztem Zeitbudget von 80 Stunden kontrolliert zu steuern.
+Die bestehende Lösung stellt die Turnierdaten grundsätzlich bereit, ermöglicht jedoch keine übersichtliche und benutzerfreundliche Darstellung des laufenden Turniers. Die Teilnehmer benötigen daher einen schnellen Zugriff auf den aktuellen Turnierstand sowie auf Informationen zu Gruppen, Mannschaften und Spielen. Zusätzlich sollen die Daten während des laufenden Turniers automatisch aktualisiert werden. Die Anforderungen werden in die Prioritäten MUSS, SOLL und KANN eingeteilt, um den Projektumfang innerhalb des vorgesehenen Zeitbudgets von 80 Stunden gezielt zu steuern.
 
 # IST-Analyse 
 ## Bestehender Prozess
