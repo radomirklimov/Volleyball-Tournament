@@ -168,12 +168,7 @@ Der Benutzer gibt einen Suchbegriff für eine Mannschaft ein. Das Frontend über
 
 ## Qualitätsziele
 ### Usability
-Die Benutzeroberfläche soll:
-- übersichtlich strukturiert sein
-- eine klare Navigation besitzen
-- relevante Informationen schnell zugänglich machen
-- auf unterschiedlichen Endgeräten nutzbar sein
-- eine verständliche Darstellung der Turnierinformationen ermöglichen
+Die Anwendung soll eine übersichtliche und verständliche Benutzeroberfläche mit klarer Navigation bieten. Die wichtigsten Turnierinformationen sollen schnell auffindbar sein. Zudem soll die Anwendung auf unterschiedlichen Endgeräten nutzbar sein.
 ## Wartbarkeit
 Die Software soll strukturiert und modular aufgebaut werden. Dadurch sollen zukünftige Änderungen und Erweiterungen erleichtert werden.
 
